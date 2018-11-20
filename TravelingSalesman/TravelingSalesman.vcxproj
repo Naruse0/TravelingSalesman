@@ -18,6 +18,38 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Common\Common_BaseOperator.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Math\Int\Math_Int2.cpp" />
+    <ClCompile Include="Source\Math\Int\Math_Int3.cpp" />
+    <ClCompile Include="Source\Math\Int\Math_Int4.cpp" />
+    <ClCompile Include="Source\Math\Math_Common.cpp" />
+    <ClCompile Include="Source\Math\Math_Util.cpp" />
+    <ClCompile Include="Source\Math\Matrix\Math_Matrix44.cpp" />
+    <ClCompile Include="Source\Math\Quaternion\Math_Quaternion.cpp" />
+    <ClCompile Include="Source\Math\Vector\Math_Vector2.cpp" />
+    <ClCompile Include="Source\Math\Vector\Math_Vector3.cpp" />
+    <ClCompile Include="Source\Math\Vector\Math_Vector4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Common\Common_BaseOperator.h" />
+    <ClInclude Include="Source\Common\Common_BaseType.h" />
+    <ClInclude Include="Source\Common\Common_Def.h" />
+    <ClInclude Include="Source\Common\Common_ForceInclude.h" />
+    <ClInclude Include="Source\Math\Int\Math_Int2.h" />
+    <ClInclude Include="Source\Math\Int\Math_Int3.h" />
+    <ClInclude Include="Source\Math\Int\Math_Int4.h" />
+    <ClInclude Include="Source\Math\Math_Common.h" />
+    <ClInclude Include="Source\Math\Math_Def.h" />
+    <ClInclude Include="Source\Math\Math_Type.h" />
+    <ClInclude Include="Source\Math\Math_Util.h" />
+    <ClInclude Include="Source\Math\Matrix\Math_Matrix44.h" />
+    <ClInclude Include="Source\Math\Quaternion\Math_Quaternion.h" />
+    <ClInclude Include="Source\Math\Vector\Math_Vector2.h" />
+    <ClInclude Include="Source\Math\Vector\Math_Vector3.h" />
+    <ClInclude Include="Source\Math\Vector\Math_Vector4.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F80FFA62-3805-402E-B1C3-C6E23E247DA8}</ProjectGuid>
@@ -89,6 +121,8 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)Source\Common\Common_ForceInclude.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -116,6 +150,8 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)Source\Common\Common_ForceInclude.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -140,9 +176,6 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
